@@ -1,114 +1,182 @@
+/* ==========================================================================
+   BICICLETAS MIURA - DISEÑO MODERNO Y DEPORTIVO
+   ========================================================================== */
 :root {
     --primary: #1A1A1A;
-    --secondary: #E67E22;
-    --bg-light: #F4F4F4;
-    --white: #FFFFFF;
+    --accent: #E63946;
+    --bg: #F8F9FA;
     --text: #333333;
-    --text-muted: #666666;
+    --text-light: #6c757d;
+    --white: #FFFFFF;
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
 
+/* Importar fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap');
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--font-body); background: var(--bg-light); color: var(--text); line-height: 1.6; }
-a { text-decoration: none; color: inherit; }
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
-h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary); line-height: 1.2; }
 
-/* Top Disclaimer */
-.top-disclaimer { background: #222; color: #fff; text-align: center; padding: 10px; font-size: 0.85rem; border-bottom: 3px solid var(--secondary); }
-.top-disclaimer a { color: var(--secondary); text-decoration: underline; }
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
 
-/* Header */
-.main-header { background: var(--white); padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
-.header-container { display: flex; justify-content: space-between; align-items: center; }
-.logo { display: flex; align-items: center; gap: 10px; }
-.logo-icon { font-size: 2rem; }
-.logo-text strong { display: block; font-size: 1.2rem; font-family: var(--font-heading); font-weight: 800; text-transform: uppercase; }
-.logo-text small { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-.main-nav { display: flex; gap: 25px; font-weight: 600; font-size: 0.9rem; }
-.main-nav a:hover { color: var(--secondary); }
-.btn { display: inline-block; padding: 12px 24px; font-family: var(--font-heading); font-weight: 700; border-radius: 4px; cursor: pointer; text-align: center; transition: 0.3s; border: none; }
-.btn-primary { background: var(--secondary); color: var(--white); }
-.btn-primary:hover { background: #d35400; }
-.btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
-.btn-outline:hover { background: var(--white); color: var(--primary); }
-.btn-block { width: 100%; display: block; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
 
-/* Hero */
-.hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1530124566582-a618bc2615dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover; color: var(--white); padding: 100px 0; text-align: center; }
-.hero-badge { display: inline-block; background: var(--secondary); color: var(--white); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; }
-.hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--white); margin-bottom: 20px; }
-.hero .highlight { color: var(--secondary); }
-.hero-lead { font-size: 1.1rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
-.hero-actions { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+/* Top Bar (Teléfono e Instagram) */
+.top-bar {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px 0;
+    font-size: 0.85rem;
+}
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.top-bar a { color: var(--white); margin-left: 15px; }
+.top-bar a:hover { color: var(--accent); }
 
-/* Trust Bar */
-.trust-bar { background: var(--primary); color: var(--white); padding: 15px 0; }
-.trust-content { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-size: 0.9rem; font-weight: 600; }
+/* Header & Logo */
+.main-header {
+    background-color: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.logo img { max-height: 60px; }
 
-/* Productos */
-.services { padding: 80px 0; }
-.section-header { text-align: center; margin-bottom: 50px; }
-.eyebrow { color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; display: block; margin-bottom: 10px; }
-.section-header h2 { font-size: 2.2rem; margin-bottom: 15px; }
-.section-sub { color: var(--text-muted); font-size: 1.1rem; }
-.grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-.card { background: var(--white); padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-bottom: 4px solid var(--secondary); transition: 0.3s; }
-.card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-.card-icon { font-size: 2.5rem; margin-bottom: 15px; }
-.card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-.card p { color: var(--text-muted); font-size: 0.95rem; }
+/* Navegación */
+.main-nav ul { display: flex; gap: 25px; }
+.main-nav a {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
+}
+.main-nav a:hover, .main-nav a.active {
+    color: var(--accent);
+    border-bottom: 3px solid var(--accent);
+}
+.main-nav .sub-menu { display: none; } /* Ocultar submenús por ahora */
 
-/* Sección Crédito */
-.about { padding: 80px 0; background: var(--white); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-.about-text h2 { font-size: 2rem; margin-bottom: 20px; }
-.about-text p { margin-bottom: 15px; color: var(--text-muted); }
-.list-check { list-style: none; margin-bottom: 20px; }
-.list-check li { position: relative; padding-left: 25px; margin-bottom: 10px; font-weight: 600; }
-.list-check li::before { content: '✓'; position: absolute; left: 0; color: var(--secondary); font-weight: 800; }
-.credit-box { background: var(--bg-light); padding: 40px; border-radius: 8px; text-align: center; border: 2px dashed #ccc; }
-.credit-box h3 { font-size: 1.5rem; margin-bottom: 10px; }
-.bank-logo-placeholder { background: var(--primary); color: var(--secondary); font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; padding: 20px; border-radius: 8px; margin: 20px 0; }
-.small-text { font-size: 0.85rem; color: var(--text-muted); }
+/* Hero Section (Banner Principal) */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=1920&q=80') center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+}
+.hero-section h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.hero-section .btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 15px 40px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.hero-section .btn:hover {
+    background-color: #c1121f;
+    transform: translateY(-3px);
+}
 
-/* Contacto */
-.contact { padding: 80px 0; background: var(--primary); color: var(--white); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-.contact-info h2 { color: var(--white); font-size: 2rem; margin-bottom: 20px; }
-.contact-info p { color: #bbb; margin-bottom: 30px; }
-.contact-list { list-style: none; margin-bottom: 30px; }
-.contact-list li { display: flex; gap: 15px; margin-bottom: 20px; }
-.contact-list .icon { font-size: 1.5rem; }
-.contact-list strong { display: block; font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 3px; }
-.contact-list span { color: #bbb; font-size: 0.95rem; }
-.owner-info { background: rgba(255,255,255,0.1); padding: 15px; border-left: 4px solid var(--secondary); border-radius: 4px; }
-.contact-form-wrap { background: var(--white); padding: 40px; border-radius: 8px; }
-.form-group { margin-bottom: 20px; }
-.form-group label { display: block; font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; color: var(--primary); }
-.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: var(--font-body); }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--secondary); }
-.checkbox-group { display: flex; gap: 10px; align-items: flex-start; }
-.checkbox-group input { width: auto; margin-top: 4px; }
-.checkbox-group label { font-family: var(--font-body); font-weight: 400; color: var(--text-muted); font-size: 0.85rem; }
-.checkbox-group a { color: var(--primary); text-decoration: underline; }
+/* Sección de Productos (Bicicletas) */
+.products-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+.products-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--primary);
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.product-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    text-align: center;
+    padding-bottom: 25px;
+}
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain; /* Para que la bicicleta se vea completa */
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+.product-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+.product-card .btn-small {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.product-card .btn-small:hover {
+    background: var(--accent);
+}
 
 /* Footer */
-.main-footer { background: #111; color: #888; padding: 40px 0 20px; font-size: 0.85rem; }
-.footer-disclaimer { background: #222; padding: 20px; border-radius: 8px; margin-bottom: 30px; border-left: 4px solid #c0392b; }
-.footer-disclaimer p { margin-bottom: 10px; color: #ccc; }
-.footer-disclaimer strong { color: #e74c3c; }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: 1px solid #333; padding-top: 20px; }
-.footer-links a { color: var(--secondary); margin-left: 15px; text-decoration: underline; }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .header-container { flex-direction: column; text-align: center; gap: 15px; }
-    .main-nav { flex-direction: column; gap: 10px; }
-    .trust-content { flex-direction: column; gap: 10px; text-align: center; }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; }
-    .contact-form-wrap { padding: 20px; }
-    .footer-bottom { flex-direction: column; text-align: center; }
-    .footer-links a { margin: 0 10px; }
+.main-footer {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
 }
