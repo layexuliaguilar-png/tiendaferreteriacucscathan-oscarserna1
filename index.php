@@ -196,7 +196,8 @@
                 <div>
                     <h4>Administración</h4>
                     <p>Propietario / Representante Legal:</p>
-                    <p><strong>Oscar Giovanni Florez Serna</strong></p>
+                    <!-- ⚠️ CAMBIA ESTE NOMBRE POR EL DEL NUEVO ANUNCIANTE ⚠️ -->
+                    <p><strong>[NUEVO NOMBRE DEL ANUNCIANTE]</strong></p>
                 </div>
             </div>
             
